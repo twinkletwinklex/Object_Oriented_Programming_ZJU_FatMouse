@@ -11,12 +11,54 @@
 #include "oop.h"
 using namespace std;
 
+Student::Student(string stuName, int stuScore1, int stuScore2, int stuScore3):
+	name(stuName), score1(stuScore1), score2(stuScore2), score3(stuScore3)
+{};
+int Student::getScore1()
+{
+	return score1;
+}
+int Student::getScore2()
+{
+	return score2;
+}
+int Student::getScore3()
+{
+	return score3;
+}
+double Student::getAverage()
+{
+	return (double) (score1 + score2 + score3) / 3;
+}
+void Student::printStudent(int no)
+{
+	cout.setf(ios::left);
+	cout.width(WIDTH);
+	cout<<no;
 
+	cout.width(WIDTH);
+	cout<<name;
 
-inline void printHeader();
-inline void printAverage(vector<Student>::iterator, vector<Student>::iterator);
-inline void printMin(vector<Student>::iterator, vector<Student>::iterator);
-inline void printMax(vector<Student>::iterator, vector<Student>::iterator);
+	cout.width(WIDTH);
+	cout<<score1;
+
+	cout.width(WIDTH);
+	cout<<score2;
+
+	cout.width(WIDTH);
+	cout<<score3;
+
+	cout.width(WIDTH);
+	cout<<getAverage();
+
+	cout<<endl;
+	cout.unsetf(ios::left);
+}
+
+void printHeader();
+void printAverage(vector<Student>::iterator, vector<Student>::iterator);
+void printMin(vector<Student>::iterator, vector<Student>::iterator);
+void printMax(vector<Student>::iterator, vector<Student>::iterator);
 
 int main()
 {
@@ -46,7 +88,7 @@ int main()
 
 
 
-inline void printHeader()
+void printHeader()
 {
 	const int length = 6;
 	string header[] = {
@@ -62,7 +104,7 @@ inline void printHeader()
 	cout<<endl;
 }
 
-inline void printAverage(vector<Student>::iterator begin, vector<Student>::iterator end)
+void printAverage(vector<Student>::iterator begin, vector<Student>::iterator end)
 {
 	const int sumNum = 3;
 	int sum[sumNum] = {0};
@@ -88,7 +130,7 @@ inline void printAverage(vector<Student>::iterator begin, vector<Student>::itera
 	cout.unsetf(ios::left);
 }
 
-inline void printMin(vector<Student>::iterator begin, vector<Student>::iterator end)
+void printMin(vector<Student>::iterator begin, vector<Student>::iterator end)
 {
 	const int minNum = 3;
 	int min[minNum] = {5, 5, 5};
@@ -115,7 +157,7 @@ inline void printMin(vector<Student>::iterator begin, vector<Student>::iterator 
 	cout.unsetf(ios::left);
 }
 
-inline void printMax(vector<Student>::iterator begin, vector<Student>::iterator end)
+void printMax(vector<Student>::iterator begin, vector<Student>::iterator end)
 {
 	const int maxNum = 3;
 	int max[maxNum] = {0};
