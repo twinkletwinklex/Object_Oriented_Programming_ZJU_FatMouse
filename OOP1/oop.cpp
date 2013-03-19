@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 #include "oop.h"
 using namespace std;
 
@@ -37,7 +38,7 @@ int main()
 	}
 	printAverage(student.begin(), student.end());
 	printMin(student.begin(), student.end());
-	printMin(student.begin(), student.end());
+	printMax(student.begin(), student.end());
 
 	system("pause");
 	return 0;
