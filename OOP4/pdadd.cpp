@@ -8,4 +8,5 @@ int main()
 {
     DiaryBase *base = new pdadd();
     delete base;
+    return 0;
 }

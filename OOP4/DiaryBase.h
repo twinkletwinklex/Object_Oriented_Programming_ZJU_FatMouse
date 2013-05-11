@@ -17,7 +17,7 @@ protected:
 	vector<OneDiary> diary;
 	void ReadFile();
 	void SaveFile();
-	void DeleteByTime(int, int, int);
+	bool DeleteByTime(int, int, int);
 public:
 	DiaryBase(){};
 	virtual ~DiaryBase();

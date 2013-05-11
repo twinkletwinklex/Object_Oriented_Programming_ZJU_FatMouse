@@ -6,4 +6,5 @@ int main(int argc, char ** argv)
 {
 	DiaryBase * base = new pdlist(argc, argv);
 	delete base;
+	return 0;
 }

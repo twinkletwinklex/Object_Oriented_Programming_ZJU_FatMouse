@@ -8,18 +8,18 @@ using namespace std;
 class pdremove : public DiaryBase
 {
 public:
-	pdremove();
+	pdremove(bool *);
 	virtual ~pdremove();
 private:
 	int year, month, day;
 	void read();
 };
 
-pdremove::pdremove()
+pdremove::pdremove(bool * del)
 {
 	this->ReadFile();
 	this->read();
-	this->DeleteByTime(year, month, day);
+	*del = this->DeleteByTime(year, month, day);
 }
 
 pdremove::~pdremove()

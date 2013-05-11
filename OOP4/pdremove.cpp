@@ -3,6 +3,10 @@
 
 int main()
 {
-	DiaryBase * base = new pdremove();
+	bool del = 0;;
+	DiaryBase * base = new pdremove(&del);
 	delete base;
+	if (del)
+		return 0;
+	return -1;
 }

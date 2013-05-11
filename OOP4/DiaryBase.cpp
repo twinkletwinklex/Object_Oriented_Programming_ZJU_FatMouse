@@ -37,7 +37,7 @@ void DiaryBase::SaveFile()
 	fout.close();
 }
 
-void DiaryBase::DeleteByTime(int year, int month, int day)
+bool DiaryBase::DeleteByTime(int year, int month, int day)
 {
 	// cout<<diary.size()<<endl;
 	for(vector<OneDiary> :: iterator ai = diary.begin(); ai != diary.end();)
@@ -46,10 +46,12 @@ void DiaryBase::DeleteByTime(int year, int month, int day)
 		if (year == ai->year && month == ai->month && day == ai->day){
 			// cout<<ai - diary.begin()<<endl;
 			ai = diary.erase(ai);
+			return true;
 		} else {
 			++ai;
 		}
 	}
+	return false;
 }
 
 DiaryBase::~DiaryBase()
