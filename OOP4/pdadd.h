@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <ctime>
 using namespace std;
 
@@ -23,7 +24,10 @@ pdadd::pdadd()
 
     OneDiary d;
     d.content = read(&d.year, &d.month, &d.day);
-	d.title = d.content.substr(0, d.content.find('.'));
+
+    istringstream sin(d.content);
+    sin>>d.title;
+
     this->DeleteByTime(d.year, d.month, d.day);
     diary.push_back(d);
 }
