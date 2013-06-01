@@ -139,7 +139,7 @@ bool operator > (const Fraction &a, const Fraction &b)
 
 ostream& operator << (ostream &os, const Fraction &a)
 {
-	os<<static_cast<string>(a)<<endl;
+	os<<static_cast<string>(a);
 	return os;
 }
 
