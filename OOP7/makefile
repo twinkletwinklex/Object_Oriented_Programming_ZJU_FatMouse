@@ -1,2 +1,2 @@
-main: Vector.o
-	g++ -o main Vector.o
+main: Vector.o IndexOutofBounds.o
+	g++ -o main Vector.o IndexOutofBounds.o

@@ -18,7 +18,7 @@ int main()
 		for (int i = 0; i != 11; ++i) {
 			cout<<v[i]<<'\t'<<vc[i]<<endl;
 		}
-	} catch (out_of_range &e){
+	} catch (IndexOutofBounds &e){
 		cout<<endl;
 		cout<<e.what()<<endl;
 	}
@@ -72,10 +72,10 @@ int Vector<T>::inflate(int addSize)
 }
 
 template <class T>
-T& Vector<T> :: operator[] (int index) throw(out_of_range)
+T& Vector<T> :: operator[] (int index) throw(IndexOutofBounds)
 {
 	if (index < 0 || index >= m_nSize)
-		throw out_of_range("Vector[] out of range");
+		throw IndexOutofBounds("Vector[] out of range");
 	return m_pElements[index];
 }
 
