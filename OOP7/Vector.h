@@ -1,6 +1,7 @@
 #ifndef VECTOR_H_
 #define VECTOR_H_
 #include <stdexcept>
+
 template <class T> 
 class Vector {
 public:
@@ -16,4 +17,6 @@ private:
 	T *m_pElements;
 	int m_nSize;	
 };
+
+
 #endif

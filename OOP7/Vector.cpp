@@ -1,12 +1,35 @@
 #include "Vector.h"
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <memory.h>
 using namespace std;
+
+int main()
+{
+	Vector <int> v;
+	srand(time(NULL));
+	v.inflate(10);
+	try{	
+		for (int i = 0; i != v.size(); ++i)
+			v[i] = rand() % 10000;
+		Vector<int> vc = v;
+		cout<<"Vec 1\tVec 2"<<endl;
+		for (int i = 0; i != 11; ++i) {
+			cout<<v[i]<<'\t'<<vc[i]<<endl;
+		}
+	} catch (out_of_range &e){
+		cout<<endl;
+		cout<<e.what()<<endl;
+	}
+	return 0;
+}
 
 template <class T>
 Vector<T>::Vector()
 {
-	m_nSize = 1;
-	m_pElements = new T[m_nSize];
+	m_nSize = 0;
+	m_pElements = NULL;
 }
 
 template <class T>
@@ -56,7 +79,3 @@ T& Vector<T> :: operator[] (int index) throw(out_of_range)
 	return m_pElements[index];
 }
 
-int main()
-{
-	return 0;
-}
