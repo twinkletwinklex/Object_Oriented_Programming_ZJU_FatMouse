@@ -1,6 +1,9 @@
 # OOP7
 Given the declaration of class template Vetor below, write the bodies of the functions, and a main() to test all the facilities Vector provides.
 
+## Exception Class
+	class IndexOutofBounds{};
+
 ## template 
 	class Vector {
 	public:
